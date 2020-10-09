@@ -16,10 +16,8 @@ namespace CoreShop\Component\Resource\Repository;
 
 use Pimcore\Model\AbstractModel;
 
-interface PimcoreRepositoryInterface extends RepositoryInterface
+interface PimcoreDaoRepositoryInterface extends RepositoryInterface
 {
-    public function getClassId(): string;
-
     public function getList();
 
     public function forceFind($id, bool $force = true);
