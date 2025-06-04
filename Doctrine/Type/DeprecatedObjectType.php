@@ -16,24 +16,14 @@ declare(strict_types=1);
  *
  */
 
-namespace CoreShop\Component\Resource\Model;
+namespace CoreShop\Component\Resource\Doctrine\Type;
 
-interface TranslationInterface
+use Doctrine\DBAL\Types\JsonType;
+
+class DeprecatedObjectType extends JsonType
 {
-    /**
-     * @return TranslatableInterface|null
-     */
-    public function getTranslatable();
-
-    public function setTranslatable(?TranslatableInterface $translatable);
-
-    /**
-     * @return string
-     */
-    public function getLocale();
-
-    /**
-     * @param string $locale
-     */
-    public function setLocale($locale);
+    public function getName(): string
+    {
+        return 'object';
+    }
 }
